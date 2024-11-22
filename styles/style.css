@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Ubuntu" ;
+    src: url("../assets/fonts/Ubuntu-Regular.ttf");
+}
+
+
+*{
+    font-family: "Ubuntu";
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+header{
+    background-color: #ff8000;
+    width: 100%;
+    height: 250px;
+}
+
+.header_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    padding-left: 50px;
+    padding-top: 25px;
+    width: 600px;
+    height: 200px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.logo_basket{
+    padding-right: 50px;
+    padding-top: 25px;
+    width: 600px;
+    height: 200px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo_basket img{
+    width: 30%;
+    height: 60%;
+    transition: transform 0.3s ease;
+}
+
+.logo_basket img:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
