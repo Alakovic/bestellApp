@@ -6,8 +6,11 @@
     <title>Bestell App</title>
     <link rel="icon" href="./assets/icons/icon.png">
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/template.js"></script>
 </head>
-<body>
+<body onload="init()">
     <header>
         <section class="header_content">
             <div class="logo"><img src="./assets/img/Logo.png" alt="logo"></div>
@@ -26,10 +29,12 @@
                 </div>
                 <div class="icon"></div>
             </div>
-            <div class="food_display">
-                <div class="food_type"></div>
-                <div class="food"></div>
-            </div>
+            
+                <div class="nav_category">
+                <div class="category" id="category"></div>
+                </div>
+                <div class="nav_food" id="food_display"></div>
+            
         </section>
         <section class="basket_wrapper">
             <div class="basket"></div>

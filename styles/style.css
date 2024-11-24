@@ -48,16 +48,16 @@ header{
 
 .content{
     display: flex;
+    width: 100%;
 }
 
 .main_wrapper{
     width:80% ;
     position: relative;
+    flex-grow: 1;
 }
 
 .title_image{
-    width: 100%;
-    height: 100%;
     position: relative;
    
 }
@@ -104,17 +104,85 @@ header{
     background-color: white;
 }
 
+
+
+.nav_category{
+   padding: 10px;
+    background-color: #F6F6F0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.category{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+
+
+
+.category h3{
+    text-wrap:nowrap;
+    
+}
+
+.category h3:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+.nav_food{
+   padding-bottom: 25px;
+   display: flex;
+   align-items: center;
+   justify-items: center;
+   flex-direction: column;
+}
+
+.food_display{
+   padding: 15px;
+   margin-bottom: 15px;
+   background-color: white;
+   width: 95%;
+   border: 1px groove;
+   position: relative;
+}
+
+.food_display:hover{
+    cursor: pointer;
+    background-color: #FEE4CA;
+}
+
+.food_display img{
+    height: 20px;
+    width: 20px;
+}
+
+.plus_btn {
+    position: absolute;
+    top: 0px; 
+    right: 0px; 
+    cursor: pointer; 
+    border: 1px groove;
+    padding: 10px;
+}
+
+.plus_btn:hover{
+    cursor: pointer;
+    background-color: #FEE4CA;
+}
+
 .basket_wrapper {
     width: 20%;
     flex-grow: 1;
     padding: 16px;
     border: 2px solid red;
 }
-
 .basket {
     width: 100%;
     position: sticky;
     top: 0;
     background-color: blueviolet;
-    height: 500px;
+    height: auto;
 }
