@@ -13,44 +13,108 @@
 header{
     background-color: #ff8000;
     width: 100%;
-    height: 250px;
+    height: 80px;
 }
 
 .header_content{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+    padding:20px;
 
-.logo{
-    padding-left: 50px;
-    padding-top: 25px;
-    width: 600px;
-    height: 200px;
 }
 
 .logo img {
-    width: 100%;
-    height: 100%;
+    width: 240px;
+    height: 50px;
 }
 
-.logo_basket{
-    padding-right: 50px;
-    padding-top: 25px;
-    width: 600px;
-    height: 200px;
+.logo_burger{
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-.logo_basket img{
-    width: 30%;
-    height: 60%;
+.logo_burger img{
+    width: 50px;
+    height: 50px;
     transition: transform 0.3s ease;
 }
 
-.logo_basket img:hover{
+.logo_burger img:hover{
     cursor: pointer;
     transform: scale(1.2);
+}
+
+.content{
+    display: flex;
+}
+
+.main_wrapper{
+    width:80% ;
+    position: relative;
+}
+
+.title_image{
+    width: 100%;
+    height: 100%;
+    position: relative;
+   
+}
+
+.head_image {
+    background-image:url('../assets/img/main_image.jpg') ;
+    height:50vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title h1 {
+    font-size: 32px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+
+}
+
+.title p {
+    font-size: 20px;
+    color: #ff8000;
+    padding-bottom: 50px;
+    padding-left: 20px;
+}
+
+.icon{
+    background-image: url('../assets/icons/loffel-und-gabel.png');
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px; 
+    height: 120px; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    border: 2px solid #ff8000 ;
+    background-color: white;
+}
+
+.basket_wrapper {
+    width: 20%;
+    flex-grow: 1;
+    padding: 16px;
+    border: 2px solid red;
+}
+
+.basket {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: blueviolet;
+    height: 500px;
 }
