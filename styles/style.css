@@ -133,12 +133,21 @@ header{
 
 
 .nav_food{
+   padding-left: 15px;
    padding-bottom: 25px;
    display: flex;
-   align-items: center;
-   justify-items: center;
+   justify-content: center;
    flex-direction: column;
 }
+
+.food_category{
+   display: flex;
+   align-items: center;
+   justify-content: flex-start ;
+   padding: 10px 15px;
+}
+
+
 
 .food_display{
    padding: 15px;
@@ -147,7 +156,9 @@ header{
    width: 95%;
    border: 1px groove;
    position: relative;
+   
 }
+
 
 .food_display:hover{
     cursor: pointer;
