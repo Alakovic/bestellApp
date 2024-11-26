@@ -16,7 +16,7 @@ function fullView (){
            <p>${item.description}</p>
            <span>${item.price}€</span>
            <div class="plus_btn">
-            <img src="assets/icons/add_button.png" alt="plus">
+            <img src="./assets/icons/add_button.png" alt="plus">
             </div>
            </div>`
             
