@@ -14,8 +14,8 @@ function init() {
     foodCont.innerHTML = fullView ();
 }
 
-function scrollToCategory(categoryId) {
-    let target = document.getElementById(categoryId);
+function scrollToCategory(category) {
+    let target = document.getElementById(category);
     if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }

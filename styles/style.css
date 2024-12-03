@@ -110,6 +110,7 @@ header{
     margin-top: 20px;
     margin-bottom: 20px;
     overflow-x: scroll;
+    margin-right: 2px;
 }
 
 .nav_category::-webkit-scrollbar{
@@ -215,13 +216,89 @@ header{
 .basket_wrapper {
     width: 20%;
     flex-grow: 1;
-    padding: 16px;
-    border: 2px solid red;
+    
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
 }
 .basket {
     width: 100%;
     position: sticky;
     top: 0;
-    background-color: blueviolet;
     height: auto;
 }
+
+.basket_headline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.shipping_switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px;
+}
+
+.radio-container {
+    display: inline-flex; 
+}
+
+/* Hide the default radio button */
+input[type="radio"] {
+    display: none;
+}
+
+/* Style for the labels that act as clickable areas */
+label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #cac4c431;
+}
+
+.delivery{
+    border-radius: 10px 0 0 10px;
+}
+
+.pickup {
+    border-radius: 0 10px 10px 0;
+}
+
+.delivery-option,
+.pickup-option {
+    display: flex;
+    align-items: center;
+}
+
+.delivery-option img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px; 
+}
+
+.pickup-option img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px; 
+}
+
+
+/* When the radio button is selected */
+input[type="radio"]:checked + label {
+    background-color: #11000031;
+}
+
+label p {
+    font-size: 16px;
+    font-weight: bold;
+   
+}
+
+label span {
+    font-size: 14px;
+    color: #888;
+}
+
