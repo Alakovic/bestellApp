@@ -16,7 +16,7 @@ function fullView (){
            <p>${item.description}</p>
            <span>${item.price}€</span>
            <div class="plus_btn">
-            <img src="./assets/icons/add_button.png" alt="plus">
+            <img src="./assets/icons/add_button.png" alt="plus" onclick="addToCart('${item.name}',${item.price})">
             </div>
            </div>`
             
@@ -24,5 +24,25 @@ function fullView (){
     });
 
     return fullView;
+}
+
+function renderCartItem(item) {
+    return `<div class="cart_item">
+                        <span>${item.name}</span>
+                <div class="cart_controls">
+                    <img src="./assets/icons/minus.png" alt="minus" onclick="changeQuantity('${item.name}',-1)">
+                         <span>${item.quantity}x</span>
+                    <img src="./assets/icons/add_button.png" alt="plus" onclick="changeQuantity('${item.name}',1)">
+                        <span>${(item.price * item.quantity).toFixed(2)}€</span>
+                    <img src="./assets/icons/mull.png" alt="mull" onclick="removeFromCart('${item.name}')" class="delete_icon">
+                </div> 
+            </div>`;
+}
+
+function renderCartTotal(totalPrice, deliveryCost) {
+    return `${deliveryCost > 0 ? `<div class="delivery_cost"><strong>Delivery Cost:</strong>${deliveryCost}€</div>` : ''}
+            <div class="cart_total">
+                <strong>Total: </strong> ${totalPrice.toFixed(2)}€
+           </div>`;
 }
 

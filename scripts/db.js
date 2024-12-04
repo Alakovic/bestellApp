@@ -241,3 +241,5 @@ let myDishes =
         ]
     }
 ]
+
+let cart = [] ;
