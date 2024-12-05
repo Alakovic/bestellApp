@@ -28,7 +28,7 @@ function fullView (){
 
 function renderCartItem(item) {
     return `<div class="cart_item">
-                        <span>${item.name}</span>
+                        <span class="item_name">${item.name}</span>
                 <div class="cart_controls">
                     <img src="./assets/icons/minus.png" alt="minus" onclick="changeQuantity('${item.name}',-1)">
                          <span>${item.quantity}x</span>
@@ -40,7 +40,11 @@ function renderCartItem(item) {
 }
 
 function renderCartTotal(totalPrice, deliveryCost) {
-    return `${deliveryCost > 0 ? `<div class="delivery_cost"><strong>Delivery Cost:</strong>${deliveryCost}€</div>` : ''}
+    let sum = totalPrice - deliveryCost; 
+    return `<hr>
+             ${deliveryCost > 0 ?`<div class="cart_sum"><strong>Sum:</strong><span> ${sum.toFixed(2)}€</span></div>`: ''}
+            </div>
+            ${deliveryCost > 0 ? `<div class="delivery_cost"><strong>Delivery Cost:</strong><span> ${deliveryCost}€</span></div>` : ''}
             <div class="cart_total">
                 <strong>Total: </strong> ${totalPrice.toFixed(2)}€
            </div>`;

@@ -41,17 +41,18 @@ function addToCart(itemName, itemPrice) {
 
 function updateCartView(deliveryCost = 0) {
     let cartCont = document.getElementById('cart');
+    let priceCont = document.getElementById('price');
     let totalPrice = 0;
 
     cartCont.innerHTML = ''; 
+    priceCont.innerHTML = '' ;
 
     cart.forEach(item => {
         totalPrice += item.price * item.quantity;
         cartCont.innerHTML += renderCartItem(item);
     });
-
     totalPrice += deliveryCost;
-    cartCont.innerHTML += renderCartTotal(totalPrice, deliveryCost);
+    priceCont.innerHTML += renderCartTotal(totalPrice, deliveryCost);
 }
 
 
