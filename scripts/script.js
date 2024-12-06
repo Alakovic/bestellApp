@@ -47,6 +47,10 @@ function updateCartView(deliveryCost = 0) {
     cartCont.innerHTML = ''; 
     priceCont.innerHTML = '' ;
 
+    if (cart.length === 0) {
+        return; // If the bucket is empty, render nothing
+    }
+
     cart.forEach(item => {
         totalPrice += item.price * item.quantity;
         cartCont.innerHTML += renderCartItem(item);
@@ -72,6 +76,7 @@ function changeQuantity(itemName, change) {
 
 function removeFromCart(itemName) {
     cart = cart.filter (item => item.name !== itemName); // Filter the items and keep only those that are not selected
+    let deliveryCost = cart.length > 0 ? 5 : 0; // Example: €5 shipping only if there are items in the basket
     updateCartView(deliveryCost);
 }
 

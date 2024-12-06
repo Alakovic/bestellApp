@@ -52,14 +52,11 @@ header{
 }
 
 .main_wrapper{
-    width:80% ;
-    position: relative;
-    flex-grow: 1;
+    width:calc(100% - 308px) ;
 }
 
 .title_image{
     position: relative;
-   
 }
 
 .head_image {
@@ -91,7 +88,7 @@ header{
 .icon{
     background-image: url('../assets/icons/loffel-und-gabel.png');
     position: absolute;
-    top: 75%;
+    top: calc(50vh);
     left: 50%;
     transform: translate(-50%, -50%);
     width: 120px; 
@@ -151,10 +148,10 @@ header{
 
 
 .nav_food{
-   padding-left: 15px;
    padding-bottom: 25px;
    display: flex;
    justify-content: center;
+   align-items: center;
    flex-direction: column;
 }
 
@@ -175,7 +172,7 @@ header{
    padding: 15px;
    margin-bottom: 15px;
    background-color: white;
-   width: 90%;
+   width: 95%;
    border: 1px groove;
    position: relative;
    
@@ -218,7 +215,7 @@ header{
 }
 
 .basket_wrapper {
-    width: 20%;
+    width: 300px;
     flex-grow: 1;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
 }
@@ -226,7 +223,7 @@ header{
     width: 100%;
     position: sticky;
     top: 0;
-    height: auto;
+    height: 400px;
 }
 
 .basket_headline {
@@ -310,7 +307,7 @@ label span {
 }
 
 .cart_section{
-    max-height: 500px;
+    max-height: 400px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;

@@ -41,6 +41,11 @@ function renderCartItem(item) {
 
 function renderCartTotal(totalPrice, deliveryCost) {
     let sum = totalPrice - deliveryCost; 
+
+    if (totalPrice === deliveryCost) {
+        return ''; // If there are no items in the cart, display nothing
+    }
+
     return `<hr>
              ${deliveryCost > 0 ?`<div class="cart_sum"><strong>Sum:</strong><span> ${sum.toFixed(2)}€</span></div>`: ''}
             </div>
