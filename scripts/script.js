@@ -79,6 +79,9 @@ function updateCartMobileView() {
     });
     totalPrice += deliveryCost;
     basketMobileContent.innerHTML += renderCartTotal(totalPrice, deliveryCost); 
+
+    document.getElementById('mobile_delivery').addEventListener('change', deliveryCostSwitchMobile);
+    document.getElementById('mobile_pickup').addEventListener('change', deliveryCostSwitchMobile);
 }
 
 function changeQuantity(itemName, change) {
