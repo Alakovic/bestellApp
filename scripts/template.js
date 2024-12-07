@@ -55,3 +55,32 @@ function renderCartTotal(totalPrice, deliveryCost) {
            </div>`;
 }
 
+
+function renderMobileBasket(){
+    return `
+        <div class="shipping_switch">
+            <div class="radio-container">
+                <input type="radio" id="mobile_delivery" name="mobile_shipping" value="delivery" ${deliveryCost > 0 ? 'checked' : ''}>
+                <label for="mobile_delivery" class="delivery">
+                    <div class="delivery-option">
+                        <img src="./assets/icons/bycicle.png" alt="">
+                        <div class="delivery-option-text">
+                            <p>Lieferung</p>
+                            <span>20-40 min.</span>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" id="mobile_pickup" name="mobile_shipping" value="pickup" ${deliveryCost === 0 ? 'checked' : ''}>
+                <label for="mobile_pickup" class="pickup">
+                    <div class="pickup-option">
+                        <div class="delivery-option-text">
+                            <p>Abholung</p>
+                            <span>10-20 min.</span>
+                        </div>
+                        <img src="./assets/icons/abholen.png" alt="">
+                    </div>
+                </label>
+            </div>
+        </div>
+    `;
+}

@@ -37,6 +37,7 @@ function addToCart(itemName, itemPrice) {
         });
     }
     updateCartView(deliveryCost);
+    updateCartMobileView();
 }
 
 function updateCartView(deliveryCost = 0) {
@@ -59,6 +60,26 @@ function updateCartView(deliveryCost = 0) {
     priceCont.innerHTML += renderCartTotal(totalPrice, deliveryCost);
 }
 
+function updateCartMobileView() {
+    let basketMobileContent = document.getElementById('basket_mobile_content');
+    let totalPrice = 0;
+
+    basketMobileContent.innerHTML = ''; 
+
+    if (cart.length === 0) {
+        basketMobileContent.innerHTML = '<p>Your cart is empty!</p>';
+        return;
+    }
+
+    basketMobileContent.innerHTML += renderMobileBasket();
+
+    cart.forEach(item => {
+        totalPrice += item.price * item.quantity;
+        basketMobileContent.innerHTML += renderCartItem(item); 
+    });
+    totalPrice += deliveryCost;
+    basketMobileContent.innerHTML += renderCartTotal(totalPrice, deliveryCost); 
+}
 
 function changeQuantity(itemName, change) {
     let item = cart.find(item =>item.name === itemName);
@@ -70,6 +91,7 @@ function changeQuantity(itemName, change) {
             
         }
         updateCartView(deliveryCost);
+        updateCartMobileView();
     }
 }
 
@@ -78,6 +100,7 @@ function removeFromCart(itemName) {
     cart = cart.filter (item => item.name !== itemName); // Filter the items and keep only those that are not selected
     let deliveryCost = cart.length > 0 ? 5 : 0; // Example: €5 shipping only if there are items in the basket
     updateCartView(deliveryCost);
+    updateCartMobileView();
 }
 
 
@@ -94,4 +117,29 @@ function deliveryCostSwitch() {
     }
     
     updateCartView(deliveryCost); 
+}
+
+function deliveryCostSwitchMobile(){
+    let deliverOption = document.getElementById('mobile_delivery');
+
+    if (deliverOption.checked) {
+        deliveryCost = 5;
+    } else {
+        deliveryCost = 0; 
+    }
+    updateCartMobileView();
+    updateCartView(deliveryCost);
+}
+
+function toggleBasketMobile(){
+    let basketMobile = document.getElementById('basket_mobile');
+    let basketMobileContent = document.getElementById('basket_mobile_content');
+
+    if(basketMobile.style.display === 'none' || basketMobile.style.display === '' ){
+        basketMobileContent.innerHTML = document.querySelector('.basket').innerHTML; // Copy the contents of the shopping cart
+        basketMobile.style.display = 'block' ;
+        updateCartMobileView();
+    } else  {
+        basketMobile.style.display = 'none';
+    }
 }
