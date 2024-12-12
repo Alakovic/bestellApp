@@ -52,7 +52,10 @@ function renderCartTotal(totalPrice, deliveryCost) {
             ${deliveryCost > 0 ? `<div class="delivery_cost"><strong>Delivery Cost:</strong><span> ${deliveryCost}€</span></div>` : ''}
             <div class="cart_total">
                 <strong>Total: </strong> ${totalPrice.toFixed(2)}€
-           </div>`;
+           </div>
+           <div class="confirm_order">
+           <button class="confirm_order_btn" onclick="confirmOrder()">Finish your order!</button> </div>
+           `;
 }
 
 

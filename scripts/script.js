@@ -146,3 +146,17 @@ function toggleBasketMobile(){
         basketMobile.style.display = 'none';
     }
 }
+
+function confirmOrder(){
+    cart = [] ; // Empty basket
+    deliveryCost = 0; //Reset delivery cost
+
+    let cartCont = document.getElementById('cart');
+    let priceCont = document.getElementById('price');
+    let basketMobileContent = document.getElementById('basket_mobile_content');
+
+    cartCont.innerHTML = '<p> Your order has been confirmed!</p>' ;
+    priceCont.innerHTML = '';
+    basketMobileContent.innerHTML = '<p> Your order has been confirmed!</p>' ;
+
+}

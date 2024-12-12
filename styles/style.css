@@ -200,7 +200,7 @@ header{
 
 .plus_btn {
     position: absolute;
-    top: 0px; 
+    top: -1px; 
     right: 0px; 
     cursor: pointer; 
     border: 1px groove;
@@ -213,7 +213,7 @@ header{
 }
 
 .plus_btn:active{
-    transform: translateY(4px);
+    transform: translateY(1px);
 }
 
 .basket_wrapper {
@@ -415,7 +415,6 @@ label span {
     background: white;
     margin: 10% auto;
     padding: 20px;
-    width: 90%;
     max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -427,6 +426,22 @@ label span {
     border: none;
     font-size: 20px;
     cursor: pointer;
+}
+
+.confirm_order {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.confirm_order_btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 footer{
@@ -568,5 +583,65 @@ footer{
         font-size: 16px;
         cursor: pointer;
         border-radius: 5px;
+    }
+    .nav_food {
+        padding-bottom: 70px;
+    }
+}
+
+@media(max-width:400px){
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .title h1 {
+        padding-left: 10px; 
+    }
+
+    .title p {
+        padding-left: 10px;
+    }
+
+    .category h3 {
+        font-size: 15px;
+    }
+    .food_category h3{
+        font-size: 18px;
+    }
+
+    .food_display h4 {
+        font-size: 15px;
+    }
+
+    .food_display p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width:350px) {
+    .icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .title h1 {
+        padding-left: 5px; 
+    }
+
+    .title p {
+        padding-left: 5px;
+    }
+
+    .nav_food {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 60px;
+    }
+}
+
+@media (max-width:320px) {
+    .title h1 {
+        font-size: 15px;
     }
 }
