@@ -48,11 +48,14 @@ header{
 
 .content{
     display: flex;
+    max-width: 1440px;
     width: 100%;
+    margin: 0 auto;
 }
 
 .main_wrapper{
     width:calc(100% - 308px) ;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
 }
 
 .title_image{
@@ -219,7 +222,7 @@ header{
 .basket_wrapper {
     width: 300px;
     flex-grow: 1;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.3);
 }
 .basket {
     width: 100%;
@@ -420,6 +423,30 @@ label span {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+.basket_mobile_content {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.basket_mobile_content::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+
+.basket_mobile_content::-webkit-scrollbar-track{
+    background:   white;
+}
+
+.basket_mobile_content::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: #ff8000;
+}
+
+.basket_mobile_content::-webkit-scrollbar-thumb:hover{
+    background-color: #ffaa55;
+    cursor: pointer;
+}
+
 .close_mobile {
     float: right;
     background: none;
@@ -443,6 +470,10 @@ label span {
     cursor: pointer;
     border-radius: 5px;
 }
+
+.no-scroll {
+    overflow: hidden;
+  }
 
 footer{
     display: none;

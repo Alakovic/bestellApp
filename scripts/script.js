@@ -141,9 +141,11 @@ function toggleBasketMobile(){
     if(basketMobile.style.display === 'none' || basketMobile.style.display === '' ){
         basketMobileContent.innerHTML = document.querySelector('.basket').innerHTML; // Copy the contents of the shopping cart
         basketMobile.style.display = 'block' ;
+        document.body.classList.add('no-scroll');
         updateCartMobileView();
     } else  {
         basketMobile.style.display = 'none';
+        document.body.classList.remove('no-scroll'); 
     }
 }
 
