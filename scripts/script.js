@@ -1,7 +1,8 @@
+let deliveryCost = 0; 
+
 function init() {
     let  categoryCont = document.getElementById('category');
     let  foodCont =document.getElementById('food_display');
-
 
     foodCont.innerHTML= '';
     categoryCont.innerHTML = '' ;
@@ -19,8 +20,6 @@ function scrollToCategory(category) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
-
-
 
 function addToCart(itemName, itemPrice) {
     let existingItem = cart.find(item => item.name === itemName);
@@ -47,7 +46,7 @@ function updateCartView(deliveryCost = 0) {
     clearCartContainers (cartCont, priceCont);
 
     if (cart.length === 0) {
-        return; // If the bucket is empty, render nothing
+        return; 
     }
     
     renderCartContent(cartCont, priceCont, deliveryCost);
@@ -105,24 +104,19 @@ function changeQuantity(itemName, change) {
     if (item) {
         item.quantity += change;
         if (item.quantity <= 0) {
-            cart = cart.filter(cartItem => cartItem.name !== itemName) ; //Remove if quantity is 0 
-            
+            cart = cart.filter(cartItem => cartItem.name !== itemName) ; 
         }
         updateCartView(deliveryCost);
         updateCartMobileView();
     }
 }
 
-
 function removeFromCart(itemName) {
-    cart = cart.filter (item => item.name !== itemName); // Filter the items and keep only those that are not selected
-    let deliveryCost = cart.length > 0 ? 5 : 0; // Example: €5 shipping only if there are items in the basket
+    cart = cart.filter (item => item.name !== itemName); 
+    let deliveryCost = cart.length > 0 ? 5 : 0; 
     updateCartView(deliveryCost);
     updateCartMobileView();
 }
-
-
-let deliveryCost = 0; 
 
 function deliveryCostSwitch() {
     let deliverOption = document.getElementById('delivery');
@@ -154,7 +148,7 @@ function toggleBasketMobile(){
     let basketMobileContent = document.getElementById('basket_mobile_content');
 
     if(basketMobile.style.display === 'none' || basketMobile.style.display === '' ){
-        basketMobileContent.innerHTML = document.querySelector('.basket').innerHTML; // Copy the contents of the shopping cart
+        basketMobileContent.innerHTML = document.querySelector('.basket').innerHTML; 
         basketMobile.style.display = 'block' ;
         document.body.classList.add('no-scroll');
         updateCartMobileView();
@@ -165,8 +159,8 @@ function toggleBasketMobile(){
 }
 
 function confirmOrder(){
-    cart = [] ; // Empty basket
-    deliveryCost = 0; //Reset delivery cost
+    cart = [] ; 
+    deliveryCost = 0; 
 
     let cartCont = document.getElementById('cart');
     let priceCont = document.getElementById('price');

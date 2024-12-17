@@ -11,12 +11,12 @@ function fullView (){
     myDishes.forEach(category => {
         fullView +=  `<div class="food_category" id="${category.category.toLowerCase()}"><h3> ${category.category}</h3></div>`
         category.items.forEach(item => {
-            fullView += `<div class="food_display" id="food_display">
+            fullView += `<div class="food_display" id="food_display"  onclick="addToCart('${item.name}',${item.price})">
            <h4> ${item.name} </h4>
            <p>${item.description}</p>
            <span>${item.price}€</span>
            <div class="plus_btn">
-            <img src="./assets/icons/add_button.png" alt="plus" onclick="addToCart('${item.name}',${item.price})">
+            <img src="./assets/icons/add_button.png" alt="plus">
             </div>
            </div>`
             
@@ -43,7 +43,7 @@ function renderCartTotal(totalPrice, deliveryCost) {
     let sum = totalPrice - deliveryCost; 
 
     if (totalPrice === deliveryCost) {
-        return ''; // If there are no items in the cart, display nothing
+        return ''; 
     }
 
     return `<hr>

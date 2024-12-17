@@ -192,6 +192,7 @@ header{
 }
 
 .food_display:hover{
+    cursor: pointer;
     background-color: #FEE4CA;
 }
 
