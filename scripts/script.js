@@ -43,14 +43,23 @@ function addToCart(itemName, itemPrice) {
 function updateCartView(deliveryCost = 0) {
     let cartCont = document.getElementById('cart');
     let priceCont = document.getElementById('price');
-    let totalPrice = 0;
 
-    cartCont.innerHTML = ''; 
-    priceCont.innerHTML = '' ;
+    clearCartContainers (cartCont, priceCont);
 
     if (cart.length === 0) {
         return; // If the bucket is empty, render nothing
     }
+    
+    renderCartContent(cartCont, priceCont, deliveryCost);
+}
+
+function clearCartContainers (cartCont, priceCont) {
+    cartCont.innerHTML = ''; 
+    priceCont.innerHTML = '' ;
+}
+
+function renderCartContent(cartCont, priceCont, deliveryCost) {
+    let totalPrice = 0;
 
     cart.forEach(item => {
         totalPrice += item.price * item.quantity;
@@ -62,26 +71,32 @@ function updateCartView(deliveryCost = 0) {
 
 function updateCartMobileView() {
     let basketMobileContent = document.getElementById('basket_mobile_content');
-    let totalPrice = 0;
-
     basketMobileContent.innerHTML = ''; 
 
     if (cart.length === 0) {
         basketMobileContent.innerHTML = '<p>Your cart is empty!</p>';
         return;
     }
+    renderBasketContent(basketMobileContent);
+    addDeliverySwitchListeners();
+}
 
-    basketMobileContent.innerHTML += renderMobileBasket();
-
-    cart.forEach(item => {
-        totalPrice += item.price * item.quantity;
-        basketMobileContent.innerHTML += renderCartItem(item); 
-    });
-    totalPrice += deliveryCost;
-    basketMobileContent.innerHTML += renderCartTotal(totalPrice, deliveryCost); 
-
+function addDeliverySwitchListeners() {
     document.getElementById('mobile_delivery').addEventListener('change', deliveryCostSwitchMobile);
     document.getElementById('mobile_pickup').addEventListener('change', deliveryCostSwitchMobile);
+}
+
+function renderBasketContent(container){
+    let totalPrice = 0;
+
+    container.innerHTML += renderMobileBasket();
+    cart.forEach(item => {
+        totalPrice += item.price * item.quantity;
+        container.innerHTML += renderCartItem(item); 
+    });
+
+    totalPrice += deliveryCost;
+    container.innerHTML += renderCartTotal(totalPrice, deliveryCost);
 }
 
 function changeQuantity(itemName, change) {
